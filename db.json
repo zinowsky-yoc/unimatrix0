@@ -192,5 +192,8 @@
         }
       ]
     }
-  ]
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
