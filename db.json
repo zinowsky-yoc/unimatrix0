@@ -1,90 +1,92 @@
 {
   "sites" :[{
-  "site-id": "90017",
-  "site-name": "YOC_Showcase_App_iOS",
-  "site-custom-options": "",
-  "remote-config": [
+  "id": "90017",
+  "name": "YOC_Showcase_App_iOS",
+  "customOptions": "",
+  "config": [
     {
-      "config-name": "TransientId Test",
-      "config-description": "Introduce TransientId for iOS",
-      "config-last-mod": "2021-11-06T14:21:09+0000",
-      "config-version": 1,
-      "config-parameter": [
+      "name": "TransientId Test",
+      "description": "Introduce TransientId for iOS",
+      "lastMod": "2021-11-06T14:21:09+0000",
+      "version": 1,
+      "parameter": [
         {
-          "parameter-key": "tracking.transientId.enable",
-          "parameter-value": "1",
-          "parameter-value-type": "Boolean"
+          "key": "tracking.transientId.enable",
+          "value": "true",
+          "type": "Boolean"
         },
         {
-          "parameter-key": "logging.enable",
-          "parameter-value": "1",
-          "parameter-value-type": "Boolean"
+          "key": "logging.enable",
+          "value": "true",
+          "type": "Boolean"
         }
       ],
-      "config-condition": [
+      "condition": [
         {
-          "condition-key": "device.os.android",
-          "condition-operator": "eq",
-          "condition-value": true
+          "key": "device.os.android",
+          "operator": "eq",
+          "value": "true",
+          "type": "Boolean"
         }
       ]
     }
   ],
-  "site-adunits": [
+  "adunits": [
     {
-      "adunit-id": "912268",
-      "adunit-name": "app_showcase_universal_ad-001",
-      "adunit-custom-options": "",
-      "remote-config": [
+      "id": "912268",
+      "name": "app_showcase_universal_ad-001",
+      "customOptions": "",
+      "config": [
         {
-          "config-name": "Throttle Delivery",
-          "config-description": "We want to drop 70% of the traffic",
-          "config-last-mod": "2021-11-06T14:21:09+0000",
-          "config-version": 1,
-          "config-parameter": [
+          "name": "Throttle Delivery",
+          "description": "We want to drop 70% of the traffic",
+          "lastMod": "2021-11-06T14:21:09+0000",
+          "version": 1,
+          "parameter": [
             {
-              "parameter-key": "delivery.disable",
-              "parameter-value": "1",
-              "parameter-value-type": "Boolean"
+              "key": "delivery.disable",
+              "value": "true",
+              "type": "Boolean"
             },
             {
-              "parameter-key": "logging.log.message",
-              "parameter-value": "Traffic Dropped",
-              "parameter-value-type": "String"
+              "key": "logging.log.message",
+              "value": "Traffic Dropped",
+              "type": "String"
             }
           ],
-          "config-condition": [
+          "condition": [
             {
-              "condition-key": "probability",
-              "condition-operator": "gt",
-              "condition-value": 0.7
+              "key": "probability",
+              "operator": "gt",
+              "value": "0.7",
+              "type": "Number"
             }
           ]
         }
       ]
     },
     {
-      "adunit-id": "912263",
-      "adunit-name": "app_showcase_mystery_ad-001",
-      "adunit-custom-options": "",
-      "remote-config": [
+      "id": "912263",
+      "name": "app_showcase_mystery_ad-001",
+      "customOptions": "",
+      "config": [
         {
-          "config-name": "Enable Logging",
-          "config-description": "Extended Logging Features",
-          "config-last-mod": "2021-11-07T14:21:09+0000",
-          "config-version": 7,
-          "config-parameter": [
+          "name": "Enable Logging",
+          "description": "Extended Logging Features",
+          "lastMod": "2021-11-07T14:21:09+0000",
+          "version": 7,
+          "parameter": [
             {
-              "parameter-key": "logging.enable",
-              "parameter-value": "0",
-              "parameter-value-type": "Boolean"
+              "key": "logging.enable",
+              "value": "false",
+              "type": "Boolean"
             }
           ],
-          "config-condition": [
+          "condition": [
             {
-              "condition-key": "device.country",
-              "condition-operator": "in",
-              "condition-value": [
+              "key": "device.country",
+              "operator": "in",
+              "value": [
                 "DE",
                 "AT"
               ]
@@ -96,94 +98,94 @@
   ]
 },
 {
-  "site-id": "90018",
-  "site-name": "YOC_Showcase_App_Android",
-  "site-custom-options": "",
-  "remote-config": [
+  "id": "90018",
+  "name": "YOC_Showcase_App_Android",
+  "customOptions": "",
+  "config": [
     {
-      "config-name": "TransientId Test",
-      "config-description": "Introduce TransientId for iOS",
-      "config-last-mod": "2021-11-06T14:21:09+0000",
-      "config-version": 1,
-      "config-parameter": [
+      "name": "TransientId Test",
+      "description": "Introduce TransientId for iOS",
+      "lastMod": "2021-11-06T14:21:09+0000",
+      "version": 1,
+      "parameter": [
         {
-          "parameter-key": "tracking.transientId.enable",
-          "parameter-value": "1",
-          "parameter-value-type": "Boolean"
+          "key": "tracking.transientId.enable",
+          "value": "true",
+          "type": "Boolean"
         },
         {
-          "parameter-key": "logging.enable",
-          "parameter-value": "1",
-          "parameter-value-type": "Boolean"
+          "key": "logging.enable",
+          "value": "true",
+          "type": "Boolean"
         }
       ],
-      "config-condition": [
+      "condition": [
         {
-          "condition-key": "device.os.ios",
-          "condition-operator": "eq",
-          "condition-value": true
+          "key": "device.os.ios",
+          "operator": "eq",
+          "value": "true",
+          "type": "Boolean"
         }
       ]
     }
   ],
-  "site-adunits": [
+  "adunits": [
     {
-      "adunit-id": "912268",
-      "adunit-name": "app_showcase_universal_ad-001",
-      "adunit-custom-options": "",
-      "remote-config": [
+      "id": "912268",
+      "name": "app_showcase_universal_ad-001",
+      "customOptions": "",
+      "config": [
         {
-          "config-name": "Throttle Delivery",
-          "config-description": "We want to drop 70% of the traffic",
-          "config-last-mod": "2021-11-06T14:21:09+0000",
-          "config-version": 1,
-          "config-parameter": [
+          "name": "Throttle Delivery",
+          "description": "We want to drop 70% of the traffic",
+          "lastMod": "2021-11-06T14:21:09+0000",
+          "version": 1,
+          "parameter": [
             {
-              "parameter-key": "delivery.disable",
-              "parameter-value": "1",
-              "parameter-value-type": "Boolean"
+              "key": "delivery.disable",
+              "value": "true",
+              "type": "Boolean"
             },
             {
-              "parameter-key": "logging.log.message",
-              "parameter-value": "Traffic Dropped",
-              "parameter-value-type": "String"
+              "key": "logging.log.message",
+              "value": "Traffic Dropped",
+              "type": "String"
             }
           ],
-          "config-condition": [
+          "condition": [
             {
-              "condition-key": "probability",
-              "condition-operator": "gt",
-              "condition-value": 0.7
+              "key": "probability",
+              "operator": "gt",
+              "value": "0.7",
+              "type": "Number"
             }
           ]
         }
       ]
     },
     {
-      "adunit-id": "912263",
-      "adunit-name": "app_showcase_mystery_ad-001",
-      "adunit-custom-options": "",
-      "remote-config": [
+      "id": "912263",
+      "name": "app_showcase_mystery_ad-001",
+      "customOptions": "",
+      "config": [
         {
-          "config-name": "Enable Logging",
-          "config-description": "Extended Logging Features",
-          "config-last-mod": "2021-11-07T14:21:09+0000",
-          "config-version": 7,
-          "config-parameter": [
+          "name": "Enable Logging",
+          "description": "Extended Logging Features",
+          "lastMod": "2021-11-07T14:21:09+0000",
+          "version": 7,
+          "parameter": [
             {
-              "parameter-key": "logging.enable",
-              "parameter-value": "0",
-              "parameter-value-type": "Boolean"
+              "key": "logging.enable",
+              "value": "false",
+              "type": "Boolean"
             }
           ],
-          "config-condition": [
+          "condition": [
             {
-              "condition-key": "device.country",
-              "condition-operator": "in",
-              "condition-value": [
-                "DE",
-                "AT"
-              ]
+              "key": "device.country",
+              "operator": "in",
+              "value": "[\"DE\",\"AT\"]",
+              "type": "[String]"
             }
           ]
         }
@@ -193,62 +195,61 @@
 }
 ], "adunits" : [
   {
-    "adunit-id": "912268",
-    "adunit-name": "app_showcase_universal_ad-001",
-    "adunit-custom-options": "",
-    "remote-config": [
+    "id": "912268",
+    "name": "app_showcase_universal_ad-001",
+    "customOptions": "",
+    "config": [
       {
-        "config-name": "Throttle Delivery",
-        "config-description": "We want to drop 70% of the traffic",
-        "config-last-mod": "2021-11-06T14:21:09+0000",
-        "config-version": 1,
-        "config-parameter": [
+        "name": "Throttle Delivery",
+        "description": "We want to drop 70% of the traffic",
+        "lastMod": "2021-11-06T14:21:09+0000",
+        "version": 1,
+        "parameter": [
           {
-            "parameter-key": "delivery.disable",
-            "parameter-value": "1",
-            "parameter-value-type": "Boolean"
+            "key": "delivery.disable",
+            "value": "true",
+            "type": "Boolean"
           },
           {
-            "parameter-key": "logging.log.message",
-            "parameter-value": "Traffic Dropped",
-            "parameter-value-type": "String"
+            "key": "logging.log.message",
+            "value": "Traffic Dropped",
+            "type": "String"
           }
         ],
-        "config-condition": [
+        "condition": [
           {
-            "condition-key": "probability",
-            "condition-operator": "gt",
-            "condition-value": 0.7
+            "key": "probability",
+            "operator": "gt",
+            "value": "0.7",
+            "type": "Number"
           }
         ]
       }
     ]
   },
   {
-    "adunit-id": "912263",
-    "adunit-name": "app_showcase_mystery_ad-001",
-    "adunit-custom-options": "",
-    "remote-config": [
+    "id": "912263",
+    "name": "app_showcase_mystery_ad-001",
+    "customOptions": "",
+    "config": [
       {
-        "config-name": "Enable Logging",
-        "config-description": "Extended Logging Features",
-        "config-last-mod": "2021-11-07T14:21:09+0000",
-        "config-version": 7,
-        "config-parameter": [
+        "name": "Enable Logging",
+        "description": "Extended Logging Features",
+        "lastMod": "2021-11-07T14:21:09+0000",
+        "version": 7,
+        "parameter": [
           {
-            "parameter-key": "logging.enable",
-            "parameter-value": "0",
-            "parameter-value-type": "Boolean"
+            "key": "logging.enable",
+            "value": "false",
+            "type": "Boolean"
           }
         ],
-        "config-condition": [
+        "condition": [
           {
-            "condition-key": "device.country",
-            "condition-operator": "in",
-            "condition-value": [
-              "DE",
-              "AT"
-            ]
+            "key": "device.country",
+            "operator": "in",
+            "value": "[\"DE\",\"AT\"]",
+            "type": "[String]"
           }
         ]
       }
