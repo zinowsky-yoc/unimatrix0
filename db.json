@@ -86,10 +86,8 @@
             {
               "key": "device.country",
               "operator": "in",
-              "value": [
-                "DE",
-                "AT"
-              ]
+              "value": "[\"DE\",\"AT\"]",
+              "type": "[String]"
             }
           ]
         }
