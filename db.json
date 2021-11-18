@@ -3,13 +3,13 @@
   "id": "90017",
   "name": "YOC_Showcase_App_iOS",
   "customOptions": "",
-  "config": [
+  "configurations": [
     {
       "name": "TransientId Test",
       "description": "Introduce TransientId for iOS",
       "lastMod": "2021-11-06T14:21:09+0000",
       "version": 1,
-      "parameter": [
+      "parameters": [
         {
           "key": "tracking.transientId.enable",
           "value": "true",
@@ -21,7 +21,7 @@
           "type": "Boolean"
         }
       ],
-      "condition": [
+      "conditions": [
         {
           "key": "device.os.android",
           "operator": "eq",
@@ -36,13 +36,13 @@
       "id": "912268",
       "name": "app_showcase_universal_ad-001",
       "customOptions": "",
-      "config": [
+      "configurations": [
         {
           "name": "Throttle Delivery",
           "description": "We want to drop 70% of the traffic",
           "lastMod": "2021-11-06T14:21:09+0000",
           "version": 1,
-          "parameter": [
+          "parameters": [
             {
               "key": "delivery.disable",
               "value": "true",
@@ -54,7 +54,7 @@
               "type": "String"
             }
           ],
-          "condition": [
+          "conditions": [
             {
               "key": "probability",
               "operator": "gt",
@@ -69,20 +69,20 @@
       "id": "912263",
       "name": "app_showcase_mystery_ad-001",
       "customOptions": "",
-      "config": [
+      "configurations": [
         {
           "name": "Enable Logging",
           "description": "Extended Logging Features",
           "lastMod": "2021-11-07T14:21:09+0000",
           "version": 7,
-          "parameter": [
+          "parameters": [
             {
               "key": "logging.enable",
               "value": "false",
               "type": "Boolean"
             }
           ],
-          "condition": [
+          "conditions": [
             {
               "key": "device.country",
               "operator": "in",
@@ -99,13 +99,13 @@
   "id": "90018",
   "name": "YOC_Showcase_App_Android",
   "customOptions": "",
-  "config": [
+  "configurations": [
     {
       "name": "TransientId Test",
       "description": "Introduce TransientId for iOS",
       "lastMod": "2021-11-06T14:21:09+0000",
       "version": 1,
-      "parameter": [
+      "parameters": [
         {
           "key": "tracking.transientId.enable",
           "value": "true",
@@ -117,7 +117,7 @@
           "type": "Boolean"
         }
       ],
-      "condition": [
+      "conditions": [
         {
           "key": "device.os.ios",
           "operator": "eq",
@@ -132,13 +132,13 @@
       "id": "912268",
       "name": "app_showcase_universal_ad-001",
       "customOptions": "",
-      "config": [
+      "configurations": [
         {
           "name": "Throttle Delivery",
           "description": "We want to drop 70% of the traffic",
           "lastMod": "2021-11-06T14:21:09+0000",
           "version": 1,
-          "parameter": [
+          "parameters": [
             {
               "key": "delivery.disable",
               "value": "true",
@@ -150,7 +150,7 @@
               "type": "String"
             }
           ],
-          "condition": [
+          "conditions": [
             {
               "key": "probability",
               "operator": "gt",
@@ -165,20 +165,20 @@
       "id": "912263",
       "name": "app_showcase_mystery_ad-001",
       "customOptions": "",
-      "config": [
+      "configurations": [
         {
           "name": "Enable Logging",
           "description": "Extended Logging Features",
           "lastMod": "2021-11-07T14:21:09+0000",
           "version": 7,
-          "parameter": [
+          "parameters": [
             {
               "key": "logging.enable",
               "value": "false",
               "type": "Boolean"
             }
           ],
-          "condition": [
+          "conditions": [
             {
               "key": "device.country",
               "operator": "in",
@@ -196,13 +196,13 @@
     "id": "912268",
     "name": "app_showcase_universal_ad-001",
     "customOptions": "",
-    "config": [
+    "configurations": [
       {
         "name": "Throttle Delivery",
         "description": "We want to drop 70% of the traffic",
         "lastMod": "2021-11-06T14:21:09+0000",
         "version": 1,
-        "parameter": [
+        "parameters": [
           {
             "key": "delivery.disable",
             "value": "true",
@@ -214,7 +214,7 @@
             "type": "String"
           }
         ],
-        "condition": [
+        "conditions": [
           {
             "key": "probability",
             "operator": "gt",
@@ -229,20 +229,20 @@
     "id": "912263",
     "name": "app_showcase_mystery_ad-001",
     "customOptions": "",
-    "config": [
+    "configurations": [
       {
         "name": "Enable Logging",
         "description": "Extended Logging Features",
         "lastMod": "2021-11-07T14:21:09+0000",
         "version": 7,
-        "parameter": [
+        "parameters": [
           {
             "key": "logging.enable",
             "value": "false",
             "type": "Boolean"
           }
         ],
-        "condition": [
+        "conditions": [
           {
             "key": "device.country",
             "operator": "in",
