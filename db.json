@@ -1,257 +1,317 @@
 {
-  "sites" :[{
-  "id": "90017",
-  "name": "YOC_Showcase_App_iOS",
-  "customOptions": "",
-  "configurations": [
-    {
-      "name": "TransientId Test",
-      "description": "Introduce TransientId for iOS",
-      "lastMod": "2021-11-06T14:21:09+0000",
-      "version": 1,
-      "parameters": [
+    "sites": [
         {
-          "key": "tracking.transientId.enable",
-          "value": "true",
-          "type": "Boolean"
+            "id": "90017",
+            "name": "YOC_Showcase_App_iOS",
+            "customOptions": "",
+            "configurations": [
+                {
+                    "name": "TransientId Test",
+                    "class": "tracking",
+                    "lastMod": "2021-11-06T14:21:09+0000",
+                    "version": 1,
+                    "parameters": [
+                        {
+                            "key": "transientId.enable",
+                            "value": "true",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "key": "device.os.android",
+                            "operator": "eq",
+                            "value": "true",
+                            "type": "Boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "Enable Logging (Slava Testing)",
+                    "class": "logging",
+                    "lastMod": "2021-11-06T14:21:09+0000",
+                    "version": 1,
+                    "parameters": [
+                        {
+                            "key": "enable",
+                            "value": "true",
+                            "type": "Boolean"
+                        },
+                        {
+                            "key": "size",
+                            "value": "200kb",
+                            "type": "String"
+                        },
+                        {
+                            "key": "level",
+                            "value": "DEBUG",
+                            "type": "String"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "key": "device.os.ios",
+                            "operator": "eq",
+                            "value": "true",
+                            "type": "Boolean"
+                        }
+                    ]
+                }
+            ],
+            "adunits": [
+                {
+                    "id": "912268",
+                    "name": "app_showcase_universal_ad-001",
+                    "customOptions": "",
+                    "configurations": [
+                        {
+                            "name": "Throttle Delivery (70% Drop)",
+                            "class": "delivery",
+                            "lastMod": "2021-11-06T14:21:09+0000",
+                            "version": 1,
+                            "parameters": [
+                                {
+                                    "key": "disable",
+                                    "value": "true",
+                                    "type": "Boolean",
+                                    "triggerMessage": "912268: Delivery Throttled by Config"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "key": "probability",
+                                    "operator": "lte",
+                                    "value": "0.7",
+                                    "type": "Number"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "912263",
+                    "name": "app_showcase_mystery_ad-001",
+                    "customOptions": "",
+                    "configurations": [
+                        {
+                            "name": "Disable Logging for Interstitial in DE, AT (Slava Testing)",
+                            "class": "logging",
+                            "lastMod": "2021-11-07T14:21:09+0000",
+                            "version": 7,
+                            "parameters": [
+                                {
+                                    "key": "enable",
+                                    "value": "false",
+                                    "type": "Boolean"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "key": "device.country",
+                                    "operator": "in",
+                                    "value": "[\"DE\",\"AT\"]",
+                                    "type": "[String]"
+                                },
+                                {
+                                    "key": "device.os.android",
+                                    "operator": "eq",
+                                    "value": "true",
+                                    "type": "Boolean"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "key": "logging.enable",
-          "value": "true",
-          "type": "Boolean"
+            "id": "90018",
+            "name": "YOC_Showcase_App_Android",
+            "customOptions": "",
+            "configurations": [
+                {
+                    "name": "TransientId Test",
+                    "class": "tracking",
+                    "lastMod": "2021-11-06T14:21:09+0000",
+                    "version": 1,
+                    "parameters": [
+                        {
+                            "key": "transientId.enable",
+                            "value": "true",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "key": "device.os.android",
+                            "operator": "eq",
+                            "value": "true",
+                            "type": "Boolean"
+                        }
+                    ]
+                },
+                {
+                    "name": "Enable Logging (Slava Testing)",
+                    "class": "logging",
+                    "lastMod": "2021-11-06T14:21:09+0000",
+                    "version": 1,
+                    "parameters": [
+                        {
+                            "key": "enable",
+                            "value": "true",
+                            "type": "Boolean"
+                        },
+                        {
+                            "key": "size",
+                            "value": "200kb",
+                            "type": "String"
+                        },
+                        {
+                            "key": "level",
+                            "value": "DEBUG",
+                            "type": "String"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "key": "device.os.ios",
+                            "operator": "eq",
+                            "value": "true",
+                            "type": "Boolean"
+                        }
+                    ]
+                }
+            ],
+            "adunits": [
+                {
+                    "id": "912268",
+                    "name": "app_showcase_universal_ad-001",
+                    "customOptions": "",
+                    "configurations": [
+                        {
+                            "name": "Throttle Delivery (70% Drop)",
+                            "class": "delivery",
+                            "lastMod": "2021-11-06T14:21:09+0000",
+                            "version": 1,
+                            "parameters": [
+                                {
+                                    "key": "disable",
+                                    "value": "true",
+                                    "type": "Boolean",
+                                    "triggerMessage": "912268: Delivery Throttled by Config"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "key": "probability",
+                                    "operator": "lte",
+                                    "value": "0.7",
+                                    "type": "Number"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "912263",
+                    "name": "app_showcase_mystery_ad-001",
+                    "customOptions": "",
+                    "configurations": [
+                        {
+                            "name": "Disable Logging for Interstitial in DE, AT (Slava Testing)",
+                            "class": "logging",
+                            "lastMod": "2021-11-07T14:21:09+0000",
+                            "version": 7,
+                            "parameters": [
+                                {
+                                    "key": "enable",
+                                    "value": "false",
+                                    "type": "Boolean"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "key": "device.country",
+                                    "operator": "in",
+                                    "value": "[\"DE\",\"AT\"]",
+                                    "type": "[String]"
+                                },
+                                {
+                                    "key": "device.os.android",
+                                    "operator": "eq",
+                                    "value": "true",
+                                    "type": "Boolean"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
-      ],
-      "conditions": [
+    ],
+    "adunits": [
         {
-          "key": "device.os.android",
-          "operator": "eq",
-          "value": "true",
-          "type": "Boolean"
-        }
-      ]
-    }
-  ],
-  "adunits": [
-    {
-      "id": "912268",
-      "name": "app_showcase_universal_ad-001",
-      "customOptions": "",
-      "configurations": [
-        {
-          "name": "Throttle Delivery",
-          "description": "We want to drop 70% of the traffic",
-          "lastMod": "2021-11-06T14:21:09+0000",
-          "version": 1,
-          "parameters": [
-            {
-              "key": "delivery.disable",
-              "value": "true",
-              "type": "Boolean"
-            },
-            {
-              "key": "logging.log.message",
-              "value": "Traffic Dropped",
-              "type": "String"
-            }
-          ],
-          "conditions": [
-            {
-              "key": "probability",
-              "operator": "gt",
-              "value": "0.7",
-              "type": "Number"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "912263",
-      "name": "app_showcase_mystery_ad-001",
-      "customOptions": "",
-      "configurations": [
-        {
-          "name": "Enable Logging",
-          "description": "Extended Logging Features",
-          "lastMod": "2021-11-07T14:21:09+0000",
-          "version": 7,
-          "parameters": [
-            {
-              "key": "logging.enable",
-              "value": "false",
-              "type": "Boolean"
-            }
-          ],
-          "conditions": [
-            {
-              "key": "device.country",
-              "operator": "in",
-              "value": "[\"DE\",\"AT\"]",
-              "type": "[String]"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-},
-{
-  "id": "90018",
-  "name": "YOC_Showcase_App_Android",
-  "customOptions": "",
-  "configurations": [
-    {
-      "name": "TransientId Test",
-      "description": "Introduce TransientId for iOS",
-      "lastMod": "2021-11-06T14:21:09+0000",
-      "version": 1,
-      "parameters": [
-        {
-          "key": "tracking.transientId.enable",
-          "value": "true",
-          "type": "Boolean"
+            "id": "912268",
+            "name": "app_showcase_universal_ad-001",
+            "customOptions": "",
+            "configurations": [
+                {
+                    "name": "Throttle Delivery (70% Drop)",
+                    "class": "delivery",
+                    "lastMod": "2021-11-06T14:21:09+0000",
+                    "version": 1,
+                    "parameters": [
+                        {
+                            "key": "disable",
+                            "value": "true",
+                            "type": "Boolean",
+                            "triggerMessage": "912268: Delivery Throttled by Config"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "key": "probability",
+                            "operator": "lte",
+                            "value": "0.7",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "key": "logging.enable",
-          "value": "true",
-          "type": "Boolean"
+            "id": "912263",
+            "name": "app_showcase_mystery_ad-001",
+            "customOptions": "",
+            "configurations": [
+                {
+                    "name": "Disable Logging for Interstitial in DE, AT (Slava Testing)",
+                    "class": "logging",
+                    "lastMod": "2021-11-07T14:21:09+0000",
+                    "version": 7,
+                    "parameters": [
+                        {
+                            "key": "enable",
+                            "value": "false",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "key": "device.country",
+                            "operator": "in",
+                            "value": "[\"DE\",\"AT\"]",
+                            "type": "[String]"
+                        },
+                        {
+                            "key": "device.os.android",
+                            "operator": "eq",
+                            "value": "true",
+                            "type": "Boolean"
+                        }
+                    ]
+                }
+            ]
         }
-      ],
-      "conditions": [
-        {
-          "key": "device.os.ios",
-          "operator": "eq",
-          "value": "true",
-          "type": "Boolean"
-        }
-      ]
-    }
-  ],
-  "adunits": [
-    {
-      "id": "912268",
-      "name": "app_showcase_universal_ad-001",
-      "customOptions": "",
-      "configurations": [
-        {
-          "name": "Throttle Delivery",
-          "description": "We want to drop 70% of the traffic",
-          "lastMod": "2021-11-06T14:21:09+0000",
-          "version": 1,
-          "parameters": [
-            {
-              "key": "delivery.disable",
-              "value": "true",
-              "type": "Boolean"
-            },
-            {
-              "key": "logging.log.message",
-              "value": "Traffic Dropped",
-              "type": "String"
-            }
-          ],
-          "conditions": [
-            {
-              "key": "probability",
-              "operator": "gt",
-              "value": "0.7",
-              "type": "Number"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "912263",
-      "name": "app_showcase_mystery_ad-001",
-      "customOptions": "",
-      "configurations": [
-        {
-          "name": "Enable Logging",
-          "description": "Extended Logging Features",
-          "lastMod": "2021-11-07T14:21:09+0000",
-          "version": 7,
-          "parameters": [
-            {
-              "key": "logging.enable",
-              "value": "false",
-              "type": "Boolean"
-            }
-          ],
-          "conditions": [
-            {
-              "key": "device.country",
-              "operator": "in",
-              "value": "[\"DE\",\"AT\"]",
-              "type": "[String]"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-], "adunits" : [
-  {
-    "id": "912268",
-    "name": "app_showcase_universal_ad-001",
-    "customOptions": "",
-    "configurations": [
-      {
-        "name": "Throttle Delivery",
-        "description": "We want to drop 70% of the traffic",
-        "lastMod": "2021-11-06T14:21:09+0000",
-        "version": 1,
-        "parameters": [
-          {
-            "key": "delivery.disable",
-            "value": "true",
-            "type": "Boolean"
-          },
-          {
-            "key": "logging.log.message",
-            "value": "Traffic Dropped",
-            "type": "String"
-          }
-        ],
-        "conditions": [
-          {
-            "key": "probability",
-            "operator": "gt",
-            "value": "0.7",
-            "type": "Number"
-          }
-        ]
-      }
     ]
-  },
-  {
-    "id": "912263",
-    "name": "app_showcase_mystery_ad-001",
-    "customOptions": "",
-    "configurations": [
-      {
-        "name": "Enable Logging",
-        "description": "Extended Logging Features",
-        "lastMod": "2021-11-07T14:21:09+0000",
-        "version": 7,
-        "parameters": [
-          {
-            "key": "logging.enable",
-            "value": "false",
-            "type": "Boolean"
-          }
-        ],
-        "conditions": [
-          {
-            "key": "device.country",
-            "operator": "in",
-            "value": "[\"DE\",\"AT\"]",
-            "type": "[String]"
-          }
-        ]
-      }
-    ]
-  }
-]
 }
