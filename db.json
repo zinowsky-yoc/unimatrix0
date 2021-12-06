@@ -39,7 +39,7 @@
               },
               {
                 "key": "size",
-                "value": "200kb",
+                "value": "200",
                 "type": "String"
               },
               {
@@ -163,7 +163,7 @@
               },
               {
                 "key": "size",
-                "value": "200kb",
+                "value": "200",
                 "type": "String"
               },
               {
