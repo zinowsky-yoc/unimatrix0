@@ -2,34 +2,13 @@
     "sites": [
       {
         "id": "90017",
-        "name": "YOC_Showcase_App_iOS",
+        "name": "YOC_Showcase_App",
         "customOptions": "",
         "configurations": [
           {
-            "name": "TransientId Test",
-            "class": "tracking",
-            "lastMod": "2021-11-06T14:21:09+0000",
-            "version": 1,
-            "parameters": [
-              {
-                "key": "transientId.enable",
-                "value": "true",
-                "type": "Boolean"
-              }
-            ],
-            "conditions": [
-              {
-                "key": "device.os.android",
-                "operator": "eq",
-                "value": "true",
-                "type": "Boolean"
-              }
-            ]
-          },
-          {
-            "name": "Enable Logging (Slava Testing)",
+            "name": "Feature: logging.enable",
             "class": "logging",
-            "lastMod": "2021-11-06T14:21:09+0000",
+            "lastMod": "2022-01-01T00:00:00+0000",
             "version": 1,
             "parameters": [
               {
@@ -50,10 +29,98 @@
             ],
             "conditions": [
               {
-                "key": "device.os.android",
-                "operator": "eq",
+                "key": "probability",
+                "operator": "gte",
+                "value": "0",
+                "type": "Number"
+              }
+            ]
+          },
+          {
+            "name": "Feature: delivery.hb.enable",
+            "class": "delivery",
+            "lastMod": "2022-01-01T00:00:00+0000",
+            "version": 1,
+            "parameters": [
+              {
+                "key": "hb.enable",
                 "value": "true",
-                "type": "Boolean"
+                "type": "Boolean",
+				"triggerMessage": "RemoteConfig: hb.enable set to true"
+              }
+            ],
+            "conditions": [
+              {
+                "key": "probability",
+                "operator": "gte",
+                "value": "0",
+                "type": "Number"
+              }
+            ]
+          },
+          {
+            "name": "Feature: delivery.disable (5%)",
+            "class": "delivery",
+            "lastMod": "2022-01-01T00:00:00+0000",
+            "version": 1,
+            "parameters": [
+              {
+                "key": "disable",
+                "value": "true",
+                "type": "Boolean",
+				"triggerMessage": "RemoteConfig: delivery disabled on 5%"
+              }
+            ],
+            "conditions": [
+              {
+                "key": "probability",
+                "operator": "gte",
+                "value": "0.95",
+                "type": "Number"
+              }
+            ]
+          },
+          {
+            "name": "Feature: delivery.expTime (3600)",
+            "class": "delivery",
+            "lastMod": "2022-01-01T00:00:00+0000",
+            "version": 1,
+            "parameters": [
+              {
+                "key": "expTime",
+                "value": "3600",
+                "type": "Number",
+				"triggerMessage": "RemoteConfig: expTime set to 3600"
+              }
+            ],
+            "conditions": [
+              {
+                "key": "probability",
+                "operator": "gte",
+                "value": "0",
+                "type": "Number"
+              }
+            ]
+          },
+          {
+            "name": "Feature: mediation.disable",
+            "class": "mediation",
+            "lastMod": "2022-01-01T00:00:00+0000",
+            "version": 1,
+            "parameters": [
+              {
+                "key": "disable",
+                "value": "true",
+                "type": "Boolean",
+				"triggerMessage": "RemoteConfig: mediationHandler disabled"
+              }
+            ],
+            "conditions": [
+              {
+                "key": "probability",
+                "operator": "gte",
+                "value": "0.5",
+                "type": "Number"
               }
             ]
           }
@@ -65,23 +132,73 @@
             "customOptions": "",
             "configurations": [
               {
-                "name": "Throttle Delivery (70% Drop)",
+                "name": "Feature: delivery.expTime (1800)",
                 "class": "delivery",
-                "lastMod": "2021-11-06T14:21:09+0000",
+                "lastMod": "2022-01-01T00:00:00+0000",
                 "version": 1,
                 "parameters": [
                   {
-                    "key": "disable",
-                    "value": "true",
-                    "type": "Boolean",
-                    "triggerMessage": "912268: Delivery Throttled by Config"
+                    "key": "expTime",
+                    "value": "1800",
+                    "type": "Number",
+                    "triggerMessage": "RemoteConfig: expTime set to 1800"
                   }
                 ],
                 "conditions": [
                   {
                     "key": "probability",
-                    "operator": "lte",
-                    "value": "0.7",
+                    "operator": "gte",
+                    "value": "0.0",
+                    "type": "Number"
+                  }
+                ]
+              },
+              {
+                "name": "Feature: messageBelow, messageAbove (50%)",
+                "class": "placement",
+                "lastMod": "2022-01-01T00:00:00+0000",
+                "version": 1,
+                "parameters": [
+                    {
+                      "key": "inline.messageBelow",
+                      "value": "message below by RemoteConfig",
+                      "type": "String",
+                      "triggerMessage": "RemoteConfig: inline.messageBelow overwritten"
+                    },
+                    {
+                      "key": "inline.messageAbove",
+                      "value": "message above by RemoteConfig",
+                      "type": "String",
+                      "triggerMessage": "RemoteConfig: inline.messageAbove overwritten"
+                    }
+                ],
+                "conditions": [
+                  {
+                    "key": "probability",
+                    "operator": "gte",
+                    "value": "0.5",
+                    "type": "Number"
+                  }
+                ]
+              },
+              {
+                "name": "Feature: disableExposureUnderstitial",
+                "class": "placement",
+                "lastMod": "2022-01-01T00:00:00+0000",
+                "version": 1,
+                "parameters": [
+                    {
+                      "key": "inline.disableExposureUnderstitial",
+                      "value": "true",
+                      "type": "Boolean",
+                      "triggerMessage": "RemoteConfig: disableExposureUnderstitial"
+                    }
+                ],
+                "conditions": [
+                  {
+                    "key": "probability",
+                    "operator": "gte",
+                    "value": "0.0",
                     "type": "Number"
                   }
                 ]
@@ -94,153 +211,24 @@
             "customOptions": "",
             "configurations": [
               {
-                "name": "Disable Logging for Interstitial in DE, AT (Slava Testing)",
-                "class": "logging",
-                "lastMod": "2021-11-07T14:21:09+0000",
+                "name": "Feature: interstitial.background",
+                "class": "placement",
+                "lastMod": "2022-01-01T00:00:00+0000",
                 "version": 7,
                 "parameters": [
                   {
-                    "key": "enable",
-                    "value": "false",
-                    "type": "Boolean"
-                  }
-                ],
-                "conditions": [
-                  {
-                    "key": "device.country",
-                    "operator": "in",
-                    "value": "[\"DE\",\"AT\"]",
-                    "type": "[String]"
-                  },
-                  {
-                    "key": "device.os.android",
-                    "operator": "eq",
-                    "value": "true",
-                    "type": "Boolean"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "90018",
-        "name": "YOC_Showcase_App_Android",
-        "customOptions": "",
-        "configurations": [
-          {
-            "name": "TransientId Test",
-            "class": "tracking",
-            "lastMod": "2021-11-06T14:21:09+0000",
-            "version": 1,
-            "parameters": [
-              {
-                "key": "transientId.enable",
-                "value": "true",
-                "type": "Boolean"
-              }
-            ],
-            "conditions": [
-              {
-                "key": "device.os.android",
-                "operator": "eq",
-                "value": "true",
-                "type": "Boolean"
-              }
-            ]
-          },
-          {
-            "name": "Enable Logging (Slava Testing)",
-            "class": "logging",
-            "lastMod": "2021-11-06T14:21:09+0000",
-            "version": 1,
-            "parameters": [
-              {
-                "key": "enable",
-                "value": "true",
-                "type": "Boolean"
-              },
-              {
-                "key": "size",
-                "value": "200",
-                "type": "String"
-              },
-              {
-                "key": "level",
-                "value": "DEBUG",
-                "type": "String"
-              }
-            ],
-            "conditions": [
-              {
-                "key": "device.os.android",
-                "operator": "eq",
-                "value": "true",
-                "type": "Boolean"
-              }
-            ]
-          }
-        ],
-        "adunits": [
-          {
-            "id": "912268",
-            "name": "app_showcase_universal_ad-001",
-            "customOptions": "",
-            "configurations": [
-              {
-                "name": "Throttle Delivery (70% Drop)",
-                "class": "delivery",
-                "lastMod": "2021-11-06T14:21:09+0000",
-                "version": 1,
-                "parameters": [
-                  {
-                    "key": "disable",
-                    "value": "true",
-                    "type": "Boolean",
-                    "triggerMessage": "912268: Delivery Throttled by Config"
+                    "key": "interstitial.background",
+                    "value": "#CC33FF",
+                    "type": "String",
+					"triggerMessage": "RemoteConfig: overwritten interstitial background"
                   }
                 ],
                 "conditions": [
                   {
                     "key": "probability",
-                    "operator": "lte",
-                    "value": "0.7",
+                    "operator": "gte",
+                    "value": "0.0",
                     "type": "Number"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "912263",
-            "name": "app_showcase_mystery_ad-001",
-            "customOptions": "",
-            "configurations": [
-              {
-                "name": "Disable Logging for Interstitial in DE, AT (Slava Testing)",
-                "class": "logging",
-                "lastMod": "2021-11-07T14:21:09+0000",
-                "version": 7,
-                "parameters": [
-                  {
-                    "key": "enable",
-                    "value": "false",
-                    "type": "Boolean"
-                  }
-                ],
-                "conditions": [
-                  {
-                    "key": "device.country",
-                    "operator": "in",
-                    "value": "[\"DE\",\"AT\"]",
-                    "type": "[String]"
-                  },
-                  {
-                    "key": "device.os.android",
-                    "operator": "eq",
-                    "value": "true",
-                    "type": "Boolean"
                   }
                 ]
               }
@@ -274,40 +262,6 @@
                 "operator": "lte",
                 "value": "0.7",
                 "type": "Number"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "912263",
-        "name": "app_showcase_mystery_ad-001",
-        "customOptions": "",
-        "configurations": [
-          {
-            "name": "Disable Logging for Interstitial in DE, AT (Slava Testing)",
-            "class": "logging",
-            "lastMod": "2021-11-07T14:21:09+0000",
-            "version": 7,
-            "parameters": [
-              {
-                "key": "enable",
-                "value": "false",
-                "type": "Boolean"
-              }
-            ],
-            "conditions": [
-              {
-                "key": "device.country",
-                "operator": "in",
-                "value": "[\"DE\",\"AT\"]",
-                "type": "[String]"
-              },
-              {
-                "key": "device.os.android",
-                "operator": "eq",
-                "value": "true",
-                "type": "Boolean"
               }
             ]
           }
